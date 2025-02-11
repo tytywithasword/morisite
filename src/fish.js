@@ -31,8 +31,14 @@ function setThings() {
     let d = document.documentElement
 
     d.style.setProperty("--scroll", tank.getBoundingClientRect().y + "px");
+    let rat = tank.getBoundingClientRect().y / $(hero).outerHeight(true)
+    if(1/rat < 0){
+        d.style.setProperty("--navbar", 100 + "vw")
+    } else {
+        d.style.setProperty("--navbar", 1/rat + "vw")
+    }
 
-    let bgRatio = (tank.getBoundingClientRect().y / $(hero).outerHeight(true))
+    let bgRatio = (rat)
     let caustRatio = ((d.scrollTop / (d.scrollHeight - d.clientHeight)) -1) * -1;
     let para = d.scrollTop 
     document.querySelector(".caustics").style.setProperty("--op", Math.max(0, ((caustRatio))) * 70 + 20 + "%")
@@ -43,7 +49,7 @@ function setThings() {
     }
     bgRatio = (tank.getBoundingClientRect().y / $(fish).outerHeight(true))
     d.style.setProperty("--bg-ratio", bgRatio * 100 *-1 + "%");
-       
+    
 }
 
 lenis.on("scroll", (event) =>{

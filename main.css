@@ -9,6 +9,7 @@
     --heading-bg: #FF392C;
     --nav-color: #15614e;
     --nav-color-hover: #2e967c;
+    --navbar:0vw;
 }
 
 *{
@@ -207,6 +208,7 @@ h1{
 
 .navbar{
     position: fixed;
+    transform: translateX(var(--navbar));
 }
 
 .navbar ul {
