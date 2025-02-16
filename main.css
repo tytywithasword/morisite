@@ -69,13 +69,11 @@ body{
     var(--bg-color-dark) calc(((var(--per) - var(--heroper)) / ( 1 - var(--heroper))) * 100%));
 }
 
-.parallax{
-    perspective: 1px;
-}
-
 .fish{
-    top:0vh;
-    position: relative;
+    top: 0;
+    position: sticky;
+    
+    
     
     z-index: -50;
     opacity: 1;
@@ -93,6 +91,7 @@ body{
 .bloom{
     z-index: -10;
     position:fixed;
+    
     opacity: 0;
     background-image: url(bloom.png), url(bloom.png);
     background-size: auto 200vh, auto 120vh;
@@ -105,12 +104,13 @@ body{
 .bloomscroll{
     will-change: background-position opacity;
     background-position-y: calc(((var(--scroll)/3) * -1 ) + var(--scroll)), calc(((var(--scroll)/1.5) * -1) + var(--scroll));
-    opacity: calc(var(--bg-ratio) * 0.6);
+    opacity: calc(var(--per) -1 *-1);
 }
 
 .fishscroll{
+    top:0;
     will-change: background-position;
-    position: fixed;
+    
     background-position-y: calc(((var(--scroll)/3) * -1 ) + var(--scroll)), calc(((var(--scroll)/1.5) * -1) + var(--scroll));
     
 }
@@ -187,7 +187,7 @@ h1{
     width:80%;
     max-height: fit-content;
     position: absolute;
-    transform: translate(0,calc((var(--per) / 3) * 100%));
+    transform: translate(0,calc((var(--per)) * 100%));
     left:10%;
     top: 30%;
     z-index: -1;
@@ -215,17 +215,6 @@ h1{
     margin: auto;
 }
 
-.lilypad{
-    width:30%;
-    position:absolute;
-    right: 1vw;
-    top:60vh;
-}
-.lilypad img{
-    width:100%;
-    filter: drop-shadow(0px calc((var(--paralax)/9) + 20px) 10px rgba(0, 136, 79, 0.527));
-}
-
 .navbar{
     position: fixed;
     transform: translateX(calc(((var(--per) / var(--heroper)) * 100%)));
@@ -247,11 +236,16 @@ h1{
     margin-right: 5vw;
     z-index: 100;
 }
+
+.burgbar{
+    display: none;
+}
+
 @media only screen and (max-width: 768px){
-    .navbar{
-        position: relative;
-    }
+   
+    
     .head{
+        display: block;
         backdrop-filter: blur(0px);
         width:100%;
         max-height: fit-content;
@@ -259,11 +253,14 @@ h1{
         transform: translate(0,0);
         left:0%;
         top: 0%;
+        padding-bottom: 20px;
     }
     .headimg{
-        margin-top: 60px;
+        
         transform: translate(0,0);
         width:100%;
+        height: auto;
+        aspect-ratio: 1;
         position:relative;
         left:0%;
         top:0%;
@@ -280,4 +277,78 @@ h1{
         right: 0px;
         margin: 0;
     }
+    .infobox {
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 2vw;
+    }
+    
+    .infoimg{
+        width: 100%;
+        margin-bottom: 2vw;
+        flex-grow: 0;
+    }
+    .presbox{
+        display: block;
+    }
+
+    .navbar{
+        background-color: #FF392C;
+        position: fixed;
+        display: block;
+        width: 100%;
+        transform: translate(0,0);
+        overflow: scroll;
+        top:0;
+        left:0;
+        height: 0;
+        padding-top: 60;
+        z-index: 99;
+    }
+    .hero{
+        padding-top: 80px;
+    }
+    .navbar ul{
+        padding: 0;
+    }
+    .navbar ul li {
+        width:100%;
+        font-family: "Libre Bodoni", serif;
+        font-size: 5vw;
+        text-align: center;
+        color: white;
+        border-bottom: solid white;
+        padding: 20px 0px;
+        margin:0;
+    }
+    .burger{
+        width:60px;
+        height:100%;
+        margin-left: 20px;
+        z-index: 100;
+        background-color: white;
+    }
+    .burgbar{
+        display: flex;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        top:0;
+        padding: 0;
+        background-color: var(--heading-bg);
+        z-index: 100;
+        align-items: center;
+    }
+
+    .bartitle{
+        font-family: "Libre Bodoni", serif;
+        font:italic 40px serif;
+        font-weight: 500;
+        margin:0;
+        width: 100%;
+        text-align: right;
+        padding-right: 20px;
+        color:white
+    }
+
 }
