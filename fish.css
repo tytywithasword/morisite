@@ -27,13 +27,13 @@
 
 
 .bloomscroll{
-    will-change: background-position-y;
+    will-change: background-position;
     background-position-y: calc(((var(--scroll)/3) * -1 ) + var(--scroll)), calc(((var(--scroll)/1.5) * -1) + var(--scroll));
     opacity: calc(var(--bg-ratio) * 0.6);
 }
 
 .fishscroll{
-    will-change: background-position-y;
+    will-change: background-position;
     background-attachment: fixed;
     background-position-y: calc(((var(--scroll)/3) * -1 ) + var(--scroll)), calc(((var(--scroll)/1.5) * -1) + var(--scroll));
     

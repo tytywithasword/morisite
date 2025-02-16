@@ -27,7 +27,24 @@ var observer = new IntersectionObserver((entitys) =>
 const tank = document.getElementById("aquarium")
 console.log(tank)
 
+function throttle(fn, delay) {
+    let isThr = false;
+
+    return function (...args) {
+        if (!isThr) {
+            fn.apply(this, args);
+            isThr = true;
+
+            setTimeout(() => {
+                isThr = false;
+            }, delay);
+        }
+    };
+}
+
+
 function setThings() {
+    
     let d = document.documentElement
 
     d.style.setProperty("--scroll", tank.getBoundingClientRect().y + "px");
@@ -38,8 +55,11 @@ function setThings() {
     d.style.setProperty("--paralax", para + "px")
 }
 
+let setthr = throttle(setThings,10)
+
 lenis.on("scroll", (event) =>{
-    setThings();
+    setthr();
 })
 
 observer.observe(tank);
+addEventListener()
