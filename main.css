@@ -40,7 +40,6 @@
     margin-top: 800px;
     padding-bottom: 30px;
 }
-
 html{
     margin:0;
     padding:0;
@@ -326,7 +325,7 @@ h1{
         font-size: 5vw;
         text-align: center;
         color: white;
-        border-bottom: solid white;
+
         padding: 20px 0px;
         margin:0;
     }
@@ -370,4 +369,7 @@ h1{
         transform: translate(0,0);
     }
 
+    .infobox p{
+        width: 100%;
+    }
 }
