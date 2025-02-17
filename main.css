@@ -72,7 +72,7 @@ body{
     background-color: color-mix(in oklab, 
     var(--bg-color-mid) 
     calc(100% - (((var(--per) - var(--heroper)) / ( 1 - var(--heroper))) * 100%)), 
-    var(--bg-color-mid) 
+    var(--bg-color-dark) 
     calc(((var(--per) - var(--heroper)) / ( 1 - var(--heroper))) * 100%));
 }
 
