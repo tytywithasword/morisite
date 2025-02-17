@@ -37,7 +37,7 @@
     align-items: center;
     padding-left: 6vw;
     padding-right: 6vw;
-    margin-top: 1100px;
+    margin-top: 800px;
     padding-bottom: 30px;
 }
 
@@ -56,8 +56,11 @@ body{
     z-index: -100;
     width: 100vw;
     height: 100vh;
-    background-color: color-mix(in oklab, var(--bg-color-light) calc(100% - ((var(--per) / var(--heroper)) * 100%)),
-    var(--bg-color-mid) calc((var(--per) / var(--heroper)) * 100%));
+    background-color: color-mix(in oklab, 
+    var(--bg-color-light) 
+    calc(75% - ((var(--per) / var(--heroper)) * 100%)),
+    var(--bg-color-mid) 
+    calc((var(--per) / var(--heroper)) * 100%));
 }
 .name-text{
     font-family: "Libre Bodoni", serif;
@@ -66,8 +69,11 @@ body{
 }
 
 .deep{
-    background-color: color-mix(in oklab, var(--bg-color-mid) calc(100% - (((var(--per) - var(--heroper)) / ( 1 - var(--heroper))) * 100%)), 
-    var(--bg-color-dark) calc(((var(--per) - var(--heroper)) / ( 1 - var(--heroper))) * 100%));
+    background-color: color-mix(in oklab, 
+    var(--bg-color-mid) 
+    calc(100% - (((var(--per) - var(--heroper)) / ( 1 - var(--heroper))) * 100%)), 
+    var(--bg-color-mid) 
+    calc(((var(--per) - var(--heroper)) / ( 1 - var(--heroper))) * 100%));
 }
 
 .fish{
@@ -105,7 +111,7 @@ body{
 .bloomscroll{
     will-change: background-position opacity;
     background-position-y: calc(((var(--scroll)/3) * -1 ) + var(--scroll)), calc(((var(--scroll)/1.5) * -1) + var(--scroll));
-    opacity: calc(var(--per) -1 *-1);
+    opacity: calc((var(--per) - var(--heroper)) / (1 - var(--heroper)));
 }
 
 .fishscroll{

@@ -49,7 +49,6 @@ function throttle(fn, delay) {
 }
 
 let d = document.documentElement;
-d.style.setProperty("--heroper", (($(hero).outerHeight(true) / (d.scrollHeight - d.clientHeight))));
 
 
 function setThings() {
@@ -59,6 +58,9 @@ function setThings() {
 
     fish.style.setProperty("--scroll", tank.getBoundingClientRect().y + "px");
     bloom.style.setProperty("--scroll", tank.getBoundingClientRect().y + "px");
+    
+    fish.style.setProperty("--per", per);
+    bloom.style.setProperty("--per", per);
     nav.style.setProperty("--per", per);
     bg.style.setProperty("--per", per);
     head.style.setProperty("--per", per);
@@ -72,3 +74,4 @@ lenis.on("scroll", (event) =>{
 })
 
 observer.observe(tank);
+d.style.setProperty("--heroper", (($(hero).outerHeight(true) / (d.scrollHeight - d.clientHeight))));
