@@ -10,7 +10,7 @@ var head = document.querySelector(".head");
 var headimg = document.querySelector(".headimg");
 var nav = document.querySelector(".navbar");
 var bg = document.querySelector(".bg");
-let burg = document.querySelector(".burgbar");
+let burg = document.querySelector(".bartitle");
 
 var observer = new IntersectionObserver((entitys) => 
 {
@@ -18,11 +18,13 @@ var observer = new IntersectionObserver((entitys) =>
         fish.classList.add("fishscroll");
         bloom.classList.add("bloomscroll");
         bg.classList.add("deep");
+        burg.classList.add("bartitleon")
         return;
     }
     fish.classList.remove("fishscroll");
     bloom.classList.remove("bloomscroll");
     bg.classList.remove("deep")
+    burg.classList.remove("bartitleon")
 }, 
 {
     threshold: 1

@@ -11,7 +11,18 @@
     </head>
     <body>
         <div class = "burgbar">
-            <div class = "burger"></div>
+            <script>
+                function shownav()
+                {
+                    nav = document.querySelector(".navbar");
+                    if(nav.style.height == "100%"){
+                        nav.style.height = '0%';
+                        return;
+                    }
+                    nav.style.height = '100%';
+                }
+            </script>
+            <div class = "burger" onclick="shownav()"></div>
             <h1 class = "bartitle">NAME NAME NAME</h1>
         </div>
         <div class = "bloom"></div>

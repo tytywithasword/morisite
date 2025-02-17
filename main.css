@@ -38,6 +38,7 @@
     padding-left: 6vw;
     padding-right: 6vw;
     margin-top: 1100px;
+    padding-bottom: 30px;
 }
 
 html{
@@ -293,11 +294,13 @@ h1{
     }
 
     .navbar{
+        margin-top: 60px;
         background-color: #FF392C;
         position: fixed;
         display: block;
         width: 100%;
         transform: translate(0,0);
+        transition: height 0.5s;
         overflow: scroll;
         top:0;
         left:0;
@@ -320,6 +323,10 @@ h1{
         border-bottom: solid white;
         padding: 20px 0px;
         margin:0;
+    }
+    .navbar ul :hover{
+        background-color: #ff685e;
+        color: white;
     }
     .burger{
         width:60px;
@@ -346,9 +353,15 @@ h1{
         font-weight: 500;
         margin:0;
         width: 100%;
+        transform: translate(100%,0%);
+        transition: transform 0.5s;
         text-align: right;
         padding-right: 20px;
         color:white
+    }
+
+    .bartitleon{
+        transform: translate(0,0);
     }
 
 }
