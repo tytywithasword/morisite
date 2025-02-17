@@ -73,5 +73,17 @@ lenis.on("scroll", (event) =>{
     setthr();
 })
 
+addEventListener("resize", ()=>
+    {
+        let nav = document.querySelector(".navbar");
+        let body = document.querySelector("body");
+        
+        nav.style.height = '0%';         
+        body.style.overflow = "auto";
+        body.style.height = "auto";
+        lenis.start();
+        d.style.setProperty("--heroper", (($(hero).outerHeight(true) / (d.scrollHeight - d.clientHeight))));
+    })
+
 observer.observe(tank);
 d.style.setProperty("--heroper", (($(hero).outerHeight(true) / (d.scrollHeight - d.clientHeight))));

@@ -14,12 +14,20 @@
             <script>
                 function shownav()
                 {
-                    nav = document.querySelector(".navbar");
+                    let nav = document.querySelector(".navbar");
+                    let body = document.querySelector("body")
                     if(nav.style.height == "100%"){
                         nav.style.height = '0%';
+                        
+                        body.style.overflow = "auto";
+                        body.style.height = "auto";
+                        lenis.start();
                         return;
                     }
                     nav.style.height = '100%';
+                    lenis.stop();
+                    body.style.overflow = "hidden";
+                    body.style.height = "0%"
                 }
             </script>
             <div class = "burger" onclick="shownav()"></div>
