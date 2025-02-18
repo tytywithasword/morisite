@@ -295,6 +295,7 @@ h1{
         flex-grow: 0;
     }
     .presbox{
+        margin-top: 300px;
         display: block;
     }
 
@@ -377,5 +378,19 @@ h1{
 
     .infobox p{
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .bloomscroll{
+        
+        background-position-y: 0;
+        opacity: calc((var(--per) - var(--heroper)) / (1 - var(--heroper)));
+    }
+
+    .fishscroll{
+        top:0;       
+        background-position-y: 0;
+        
     }
 }
