@@ -299,18 +299,19 @@ h1{
     }
 
     .navbar{
-        margin-top: 60px;
-        background-color: #FF392C;
+        padding-top: 60px;
+        background-color: #27310983; 
+        backdrop-filter: blur(10px); 
         position: fixed;
         display: block;
         width: 100%;
         transform: translate(0,0);
-        transition: height 0.5s;
+        transition: height 0.5s, padding 0.1s;
         overflow: scroll;
         top:0;
         left:0;
         height: 0;
-        padding-top: 60;
+        
         z-index: 99;
     }
     .hero{
@@ -322,7 +323,7 @@ h1{
     .navbar ul li {
         width:100%;
         font-family: "Libre Bodoni", serif;
-        font-size: 5vw;
+        font-size: 4vh;
         text-align: center;
         color: white;
 
@@ -330,31 +331,35 @@ h1{
         margin:0;
     }
     .navbar ul :hover{
-        background-color: #ff685e;
+        background-color: #10140183; ;
         color: white;
     }
     .burger{
-        width:60px;
-        height:100%;
-        margin-left: 20px;
+        width:80px;
+        height:60px;
+        margin-left: 10px;
         z-index: 100;
-        background-color: white;
+        border-radius: 10px;
+        background-color: #131a0162; 
+        backdrop-filter: blur(10px); 
     }
     .burgbar{
         display: flex;
         width: 100%;
-        height: 60px;
+        height: 80px;
         position: fixed;
         top:0;
         padding: 0;
-        background-color: var(--heading-bg);
+        background-image: linear-gradient(#000000c2, #00000067 55%, #00000000);
+        background-blend-mode: darken;
         z-index: 100;
         align-items: center;
+        
     }
 
     .bartitle{
         font-family: "Libre Bodoni", serif;
-        font:italic 5vw serif;
+        font:italic 6vw serif;
         font-weight: 500;
         margin:0;
         width: 100%;
@@ -362,7 +367,8 @@ h1{
         transition: transform 0.5s;
         text-align: right;
         padding-right: 20px;
-        color:white
+        color:white;
+        background-color: #00000000; 
     }
 
     .bartitleon{

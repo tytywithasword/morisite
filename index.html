@@ -18,12 +18,13 @@
                     let body = document.querySelector("body")
                     if(nav.style.height == "100%"){
                         nav.style.height = '0%';
-                        
+                        nav.style.padding = "0px 0px 0px";
                         body.style.overflow = "auto";
                         body.style.height = "auto";
                         lenis.start();
                         return;
                     }
+                    nav.style.padding = "60px 0px 0px";
                     nav.style.height = '100%';
                     lenis.stop();
                     body.style.overflow = "hidden";

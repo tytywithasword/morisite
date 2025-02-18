@@ -82,6 +82,7 @@ addEventListener("resize", ()=>
         body.style.overflow = "auto";
         body.style.height = "auto";
         lenis.start();
+        nav.style.padding = "0px 0px 0px";
         d.style.setProperty("--heroper", (($(hero).outerHeight(true) / (d.scrollHeight - d.clientHeight))));
     })
 
